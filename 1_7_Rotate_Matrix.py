@@ -31,20 +31,23 @@ def rotate_matrix(matrix):
 	#iterate through the current matrix and update the new rotated matrix
 	#the rotated matrix will show that the current column is the new row
 	print("-----------------")
-
 	for row in range(0, numOfRows): 
 		print(matrix[row])
-		
+
 		for r in rotatedMatrix: 
    			print(r)
 
 		for column in range(0, numOfColumns):
+			print("---Row: " + str(row))
 			print("---Column: " + str(column))
 			print("-Item: " + matrix[row][column])
-			rotatedMatrix[0][0] = "G"
-			print(rotatedMatrix[0][0])
+			print("New Row: " + str(column))
+			print("New Column: " + str(row))
+			rotatedMatrix[column][row] = matrix[row][column]
+			print(rotatedMatrix[column])
 
 		print("-----Row: " + str(row))
+
 	print("-----------------")
 
 
@@ -54,6 +57,6 @@ def rotate_matrix(matrix):
    		print(row)
 
 # This is a list with lists to make a matrix
-#alphabetical_matrix = [['A','B','C'], ['D','E','F'], ['G','H','I'], ['J','K','L']]
-alphabetical_matrix = [['A','B','C'], ['D','E','F'], ['G','H','I']]
+alphabetical_matrix = [['A','B','C'], ['D','E','F'], ['G','H','I'], ['J','K','L']]
+#alphabetical_matrix = [['A','B','C'], ['D','E','F'], ['G','H','I']]
 rotate_matrix(alphabetical_matrix)
