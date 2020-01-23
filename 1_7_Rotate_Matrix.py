@@ -6,7 +6,7 @@
 # rotate the image by 90 degrees. Can you do this in place?2
 
 def rotate_matrix(matrix):
-	print("Current Matrix:")
+	print("\nCurrent Matrix:")
 	for row in matrix:
 		print(row)
 
@@ -15,7 +15,7 @@ def rotate_matrix(matrix):
 	numOfColumns = len(matrix[0])
 	print("\nNumber of Rows: " + str(numOfRows))
 	print("Number of Columns: " + str(numOfColumns) +"\n")
-	print("-----------------")
+	print("-----------------\n")
 
 	#create new matrix
 	print("Empty Rotated Matrix:")
@@ -25,38 +25,50 @@ def rotate_matrix(matrix):
 	for row in rotatedMatrix: 
    		print(row) 
 	print("\nNumber of Rows: " + str(numOfColumns))
-	print("Number of Columns: " + str(numOfRows) +"\n")
+	print("Number of Columns: " + str(numOfRows) + "\n")
 
    	
 	#iterate through the current matrix and update the new rotated matrix
-	#the rotated matrix will show that the current column is the new row
-	print("-----------------")
-	for row in range(0, numOfRows): 
-		print(matrix[row])
+	#The Rotated Matrix's ROW will be the Current Matrix's COLUMN
+	#The Rotated Matrix's Column will be the Current Matrix's ROW, but iterated backwards
+	print("#########################")
 
-		for r in rotatedMatrix: 
-   			print(r)
+	rowOffset = numOfRows
+	for row in range(0, numOfRows): 
+		
+		print("\nCurrent Row to Add: ")
+		print(matrix[row])
+		print("Updated Rotated Matrix: ")
+
+		for r in rotatedMatrix:
+			print(r)
+
+		rowOffset -= 1
+
+		print("\n")
 
 		for column in range(0, numOfColumns):
-			print("---Row: " + str(row))
-			print("---Column: " + str(column))
-			print("-Item: " + matrix[row][column])
-			print("New Row: " + str(column))
-			print("New Column: " + str(row))
-			rotatedMatrix[column][row] = matrix[row][column]
+			print("Original Row: " + str(row))
+			print("Original Column: " + str(column))
+			print("Item: " + matrix[row][column])
+			print("Rotated Row: " + str(column))
+			print("Rotated Column: " + str(rowOffset))
+
+			rotatedMatrix[column][rowOffset] = matrix[row][column]
+
 			print(rotatedMatrix[column])
+			print("\n")
 
-		print("-----Row: " + str(row))
+			subtractOne = True
 
-	print("-----------------")
+		print("-------------------------")
 
-
-	#create new matrix
-	print("Updated Rotated Matrix:")
+	print("#### Rotated Matrix ####")
 	for row in rotatedMatrix: 
    		print(row)
 
-# This is a list with lists to make a matrix
-alphabetical_matrix = [['A','B','C'], ['D','E','F'], ['G','H','I'], ['J','K','L']]
+#Square and Rectanglular Matrices
 #alphabetical_matrix = [['A','B','C'], ['D','E','F'], ['G','H','I']]
+#alphabetical_matrix = [['A','B','C'], ['D','E','F'], ['G','H','I'], ['J','K','L']]
+alphabetical_matrix = [['A','B','C'], ['D','E','F'], ['G','H','I'], ['J','K','L'], ['M','N','O']]
 rotate_matrix(alphabetical_matrix)
