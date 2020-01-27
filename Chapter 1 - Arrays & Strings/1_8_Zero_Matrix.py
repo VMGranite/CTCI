@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# 1/--/2020
+# 1/26/2020
 # Cracking the Coding Interview Question 1.8 (Strings, Arrays, Hashtables)
 # Zero Matrix: Write an algorithm such that if an element in an MxN matrix is 0,
 # its entire row and column are set to 0.
