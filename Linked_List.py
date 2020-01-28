@@ -72,3 +72,55 @@ class linked_list:
     # Allows for bracket operator syntax (i.e. a[0] to return first item).
     def __getitem__(self, index):
         return self.getByIndex(index)
+
+    # added for probelm 2.1 Remove Duplicates - Displays Matches
+    def findEqualTo(self, item): 
+        print("Item: " + str(item))
+        current_index = 0
+        current_node = self.head
+        while current_node.next is not None and item is not None:
+            current_node = current_node.next
+            if current_node.data == item:
+                print("MATCH - Node: " + str(current_node.next.data) + " at index " + str(current_index))
+            current_index += 1
+
+    # added for probelm 2.1 Remove Duplicates
+    def removeAllInstancesOfItem(self, item): 
+        current_index = 0
+        current_node = self.head
+        while current_node.next is not None and item is not None:
+            current_node = current_node.next
+            if current_node.data == item:
+                self.eraseByIndex(current_index)
+                current_index -= 1
+            current_index += 1
+
+    # added for probelm 2.1 Remove Duplicates
+    # Keeps one instance of item, but removes all other instances
+    def removeThisDuplicate(self, item): 
+        instanceKept = False
+        current_index = 0
+        current_node = self.head
+        while current_node.next is not None and item is not None:
+            current_node = current_node.next
+            if current_node.data == item and instanceKept:
+                self.eraseByIndex(current_index)
+                current_index -= 1
+            else:
+                instanceKept = True
+            current_index += 1
+
+    # # added for probelm 2.1 Remove Duplicates
+    # # Keeps one instance of item, but removes all other instances
+    # def removeAnyDuplicates(self, item): 
+    #     instanceKept = False
+    #     current_index = 0
+    #     current_node = self.head
+    #     while current_node.next is not None and item is not None:
+    #         current_node = current_node.next
+    #         if current_node.data == item and instanceKept:
+    #             self.eraseByIndex(current_index)
+    #             current_index -= 1
+    #         else:
+    #             instanceKept = True
+    #         current_index += 1
