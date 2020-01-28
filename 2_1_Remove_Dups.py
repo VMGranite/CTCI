@@ -28,5 +28,5 @@ def remove_duplicates(my_list, item):
 #     my_list.removeAnyDuplicates(item)
 #     my_list.display()
 
-removeThisDuplicate(my_list, 1)
+remove_duplicates(my_list, 1)
 #remove_any_duplicates(my_list, [1,4])
