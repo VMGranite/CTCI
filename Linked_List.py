@@ -74,6 +74,19 @@ class linked_list:
         return self.getByIndex(index)
 
     # added for probelm 2.1 Remove Duplicates - Displays Matches
+    def findFirstMatch(self, item): 
+        print("Item: " + str(item))
+        current_index = 0
+        current_node = self.head
+
+        while current_node.next is not None and item is not None:
+            current_node = current_node.next
+            current_index += 1
+            if current_node.data == item:
+                print("MATCH - Node: " + str(current_node.data) + " at index " + str(current_index))
+                return current_index
+
+    # added for probelm 2.1 Remove Duplicates - Displays Matches
     def findEqualTo(self, item): 
         print("Item: " + str(item))
         current_index = 0
@@ -82,7 +95,7 @@ class linked_list:
         while current_node.next is not None and item is not None:
             current_node = current_node.next
             if current_node.data == item:
-                print("MATCH - Node: " + str(current_node.next.data) + " at index " + str(current_index))
+                print("MATCH - Node: " + str(current_node.data) + " at index " + str(current_index))
             current_index += 1
 
     # added for probelm 2.1 Remove Duplicates
