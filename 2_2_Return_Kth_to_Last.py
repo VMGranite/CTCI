@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# 1/28/2020
+# 1/29/2020
 # Cracking the Coding Interview Question 2.2 (Linked Lists)
 # Return Kth to Last: Implement an algorithm to find the 
 # kth to last element of a singly linked list.
