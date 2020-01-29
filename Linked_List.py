@@ -78,6 +78,7 @@ class linked_list:
         print("Item: " + str(item))
         current_index = 0
         current_node = self.head
+
         while current_node.next is not None and item is not None:
             current_node = current_node.next
             if current_node.data == item:
@@ -85,9 +86,11 @@ class linked_list:
             current_index += 1
 
     # added for probelm 2.1 Remove Duplicates
+    # remove all instances of specified item
     def removeAllInstancesOfItem(self, item): 
         current_index = 0
         current_node = self.head
+
         while current_node.next is not None and item is not None:
             current_node = current_node.next
             if current_node.data == item:
@@ -101,6 +104,7 @@ class linked_list:
         instanceKept = False
         current_index = 0
         current_node = self.head
+
         while current_node.next is not None and item is not None:
             current_node = current_node.next
             if current_node.data == item and instanceKept:
@@ -110,17 +114,46 @@ class linked_list:
                 instanceKept = True
             current_index += 1
 
-    # # added for probelm 2.1 Remove Duplicates
-    # # Keeps one instance of item, but removes all other instances
-    # def removeAnyDuplicates(self, item): 
-    #     instanceKept = False
-    #     current_index = 0
-    #     current_node = self.head
-    #     while current_node.next is not None and item is not None:
-    #         current_node = current_node.next
-    #         if current_node.data == item and instanceKept:
-    #             self.eraseByIndex(current_index)
-    #             current_index -= 1
-    #         else:
-    #             instanceKept = True
-    #         current_index += 1
+    # added for probelm 2.1 Remove Duplicates
+    # For List of Duplicates - 
+    # Keeps one instance of item, but removes all other instances
+    def removeAnyDuplicates(self, items): 
+        current_index = 0
+        current_node = self.head
+
+        while current_node.next is not None and items is not None:
+            current_node = current_node.next
+            if any(current_node.data == cnData for cnData in items):
+                self.eraseByIndex(current_index)
+                current_index -= 1
+            current_index += 1
+        # add items back into list to keep instances (this could be improved)
+        for item in items:
+            self.append(item)
+
+    # Finds which numbers repeat and returns list of duplicates
+    def findDuplicates(self):
+        current_index = 0
+        current_node = self.head
+        duplicatesDict = {}
+        duplicatesList = []
+
+        while current_node.next is not None:
+            current_node = current_node.next
+            if current_node.data not in duplicatesDict:
+                duplicatesDict[current_node.data] = 1
+            else:
+                duplicatesDict[current_node.data] = duplicatesDict[current_node.data] + 1
+            current_index += 1
+
+        for key, value in duplicatesDict.items():
+            if value > 1:
+                duplicatesList.append(key)
+
+        return duplicatesList
+
+                
+
+
+
+

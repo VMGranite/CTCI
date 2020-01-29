@@ -17,16 +17,23 @@ my_list.append(4)
 my_list.append(4)
 my_list.display()
 
-
 def remove_duplicates(my_list, item):
     my_list.findEqualTo(item)
+    # Specify item to check for duplicates. 
+    # Keeps one instance of the item, and remove all others
     my_list.removeThisDuplicate(item)
-    my_list.display()
 
-# def remove_any_duplicates(my_list, items):
-#     my_list.findEqualTo(item)
-#     my_list.removeAnyDuplicates(item)
-#     my_list.display()
+def remove_all_duplicates(my_list, items):
+    # Specify list of items to check for duplicates. 
+    # Keeps one instance of the item, and remove all others
+    my_list.removeAnyDuplicates(items)
 
-remove_duplicates(my_list, 1)
-#remove_any_duplicates(my_list, [1,4])
+# This should find the duplicates, instead of specifying item to search for
+def find_and_remove_all_duplicates(my_list):
+    my_list.removeAnyDuplicates(my_list.findDuplicates())
+
+
+#remove_duplicates(my_list, 1)
+#remove_all_duplicates(my_list, [1,4])
+find_and_remove_all_duplicates(my_list)
+my_list.display()
