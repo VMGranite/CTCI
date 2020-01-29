@@ -30,7 +30,7 @@ class linked_list:
         while current != None:
             total += 1
             current = current.next
-        return total
+        return total - 1
 
     # Prints out the linked list in traditional Python list format. 
     def display(self):
@@ -131,6 +131,7 @@ class linked_list:
         for item in items:
             self.append(item)
 
+    # added for probelm 2.1 Remove Duplicates
     # Finds which numbers repeat and returns list of duplicates
     def findDuplicates(self):
         current_index = 0
