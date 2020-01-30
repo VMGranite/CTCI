@@ -73,7 +73,7 @@ class linked_list:
     def __getitem__(self, index):
         return self.getByIndex(index)
 
-    # added for probelm 2.1 Remove Duplicates - Displays Matches
+    # added for probelm 2.3 Remove Duplicates - Displays Matches
     def findFirstMatch(self, item): 
         current_index = 0
         current_node = self.head

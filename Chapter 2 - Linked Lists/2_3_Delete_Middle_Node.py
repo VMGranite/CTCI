@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # 1/29/2020
 # Cracking the Coding Interview Question 2.3 (Linked Lists)
-# Implement an algorithm to delete a node in the middle
+# Delete Middle Node: Implement an algorithm to delete a node in the middle
 # (i.e., any node but the first and last node, not necessarily the exact middle)
 # of a singly linked list, given only access to that node
 # EXAMPLE: 
