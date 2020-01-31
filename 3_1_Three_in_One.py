@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # 1/31/2020
 # Cracking the Coding Interview Question 3.1 (Stacks and Queues)
-# Describe how you could use a single array to implement three stacks
+# Three in One: Describe how you could use a single array to implement three stacks
 
 # Python uses lists to create arrays
-# Create 3 lists and treat them like stacks - only add to the end pf the list, and do not 
+# Create 3 lists and treat them like stacks - only add to the end pf the list, and do not index
 oneLongList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 #Splot the oneLongList into 3 other lists
 stackOne = oneLongList[0:4]
