@@ -20,10 +20,11 @@ def findMin(unsortedList):
 		if element < minElement:
 			print("New min found! - " + str(element))
 			minElement = element
+	print("FINAL MIN: " + str(minElement))
 
 	print("\nSearch Completed\n-------------------")
 
-findMin([100, 44, 22, 500, 23, 14, 0, 55, 6, 1, 67])
+findMin([100, 44, 22, 500, 23, 14, 2, 55, 6, 1, 67])
 
 findMin([0,1,2,3,4,5])
 
